@@ -4,18 +4,18 @@ BasicModel is intended to be used as a tableless model in Rails. It complies wit
 
 ## Usage
 
-  gem install basic_model
+    gem install basic_model
+    
+    # Gemfile
+    gem 'basic_model'
+    
+    # models/message.rb
+    class Message < BasicModel
+      attr_accessor :name, :email, :content
   
-  # Gemfile
-  gem 'basic_model'
-  
-  # models/message.rb
-  class Message < BasicModel
-    attr_accessor :name, :email, :content
-
-    # can even include validations
-    validates_presence_of :name
-  end
+      # can even include validations
+      validates_presence_of :name
+    end
 
 ## Copyright
 
