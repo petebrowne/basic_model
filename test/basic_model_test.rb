@@ -1,11 +1,8 @@
-lib = File.expand_path('../../lib', __FILE__)
-$:.unshift(lib) unless $:.include?(lib)
-
 require 'rubygems'
 require 'test/unit'
 require 'active_support/test_case'
 require 'active_model'
-require 'basic_model'
+require File.expand_path('../../lib/basic_model', __FILE__)
 
 class Post < BasicModel
   attr_accessor :title, :body
