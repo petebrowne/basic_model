@@ -4,7 +4,8 @@ require 'active_support/test_case'
 require 'active_model'
 require File.expand_path('../../lib/basic_model', __FILE__)
 
-class Post < BasicModel
+class Post
+  include BasicModel
   attr_accessor :title, :body
 end
 
@@ -12,7 +13,7 @@ class BasicModelTest < ActiveSupport::TestCase
   include ActiveModel::Lint::Tests
   
   def setup
-    @model = BasicModel.new
+    @model = Post.new
   end
   
   def test_initialize_with_attributes

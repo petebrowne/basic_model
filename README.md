@@ -1,6 +1,6 @@
 # BasicModel
 
-BasicModel is intended to be used as a tableless model in Rails. It complies with the ActiveModel API and includes valdiations, so it can be used in form helpers without a problem.
+BasicModel is intended to be used in a tableless model in Rails >= 3.0. It complies with the ActiveModel API and includes valdiations, so it can be used in form helpers without a problem.
 
 ## Usage
 
@@ -10,7 +10,8 @@ BasicModel is intended to be used as a tableless model in Rails. It complies wit
     gem 'basic_model'
     
     # models/message.rb
-    class Message < BasicModel
+    class Message
+      include BasicModel
       attr_accessor :name, :email, :content
   
       # can even include validations
@@ -19,4 +20,4 @@ BasicModel is intended to be used as a tableless model in Rails. It complies wit
 
 ## Copyright
 
-Copyright (c) 2009 [Peter Browne](http://petebrowne.com). See LICENSE for details.
+Copyright (c) 2011 [Peter Browne](http://petebrowne.com). See LICENSE for details.
