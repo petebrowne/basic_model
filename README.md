@@ -17,6 +17,11 @@ BasicModel is intended to be used in a tableless model in Rails >= 3.0. It compl
       # can even include validations
       validates_presence_of :name
     end
+    
+    # Somewhere else
+    message = Message.new(:email => "foo", :content => "bar")
+    message.valid?
+    message.errors[:name] # => ["can't be blank"]
 
 ## Copyright
 
