@@ -1,6 +1,6 @@
 # BasicModel
 
-BasicModel is intended to be used as a tableless model in Rails. It complies with the ActiveModel API and includes valdiations, so it can be used in form helpers without a problem.
+BasicModel is intended to be used as a tableless model in Rails. It complies with the ActiveModel API and includes validations, so it can be used in form helpers without a problem.
 
 ## Usage
 
