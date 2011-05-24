@@ -1,9 +1,11 @@
-require 'active_model'
+require 'active_model/conversion'
+require 'active_model/validations'
+require 'active_support/concern'
 
-class BasicModel
+module BasicModel
+  extend ActiveSupport::Concern
   include ActiveModel::Conversion
   include ActiveModel::Validations
-  extend ActiveModel::Naming
   
   def initialize(attributes = {})
     attributes.each do |name, value|
