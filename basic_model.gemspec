@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'basic_model'
-  s.version     = '0.2.0'
+  s.version     = '0.2.1'
   s.summary     = 'BasicModel is a tiny Module that complies with the ActiveModel API'
   s.description = 'BasicModel is intended to be used in a tableless model in Rails >= 3.0. It complies with the ActiveModel API and includes valdiations, so it can be used in form helpers without a problem.'
   
@@ -11,6 +11,6 @@ Gem::Specification.new do |s|
   
   s.files = %w(lib/basic_model.rb LICENSE README.md)
   
-  s.add_dependency 'activemodel',   '~> 3.0.0'
-  s.add_dependency 'activesupport', '~> 3.0.0'
+  s.add_dependency 'activemodel',   '~> 3.0'
+  s.add_dependency 'activesupport', '~> 3.0'
 end

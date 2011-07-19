@@ -1,8 +1,7 @@
 require 'rubygems'
+require 'bundler/setup'
+Bundler.require
 require 'test/unit'
-require 'active_support/test_case'
-require 'active_model'
-require File.expand_path('../../lib/basic_model', __FILE__)
 
 class Post
   include BasicModel
@@ -17,8 +16,8 @@ class BasicModelTest < ActiveSupport::TestCase
   end
   
   def test_initialize_with_attributes
-    post = Post.new(:title => 'Title', :body => 'Body')
-    assert_equal 'Title', post.title
-    assert_equal 'Body', post.body
+    @model = Post.new(:title => 'Title', :body => 'Body')
+    assert_equal 'Title', @model.title
+    assert_equal 'Body', @model.body
   end
 end

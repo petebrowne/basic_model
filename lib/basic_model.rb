@@ -1,5 +1,4 @@
-require 'active_model/conversion'
-require 'active_model/validations'
+require 'active_model'
 require 'active_support/concern'
 
 module BasicModel
@@ -9,7 +8,7 @@ module BasicModel
   
   def initialize(attributes = {})
     attributes.each do |name, value|
-      send("#{name}=", value)
+      send "#{name}=", value
     end unless attributes.nil?
   end
   
