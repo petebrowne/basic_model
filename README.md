@@ -21,9 +21,9 @@ class Message
   validates_presence_of :name
 end
 
-message = Message.new(:email => "foo", :content => "bar")
+message = Message.new(:email => 'foo', :content => 'bar')
 message.valid?
-message.errors[:name] # => ["can't be blank"]
+message.errors[:name] # => ['can't be blank']
 ```
 
 ## Copyright
