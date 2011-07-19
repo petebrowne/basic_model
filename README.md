@@ -2,26 +2,29 @@
 
 BasicModel is intended to be used in a tableless model in Rails >= 3.0. It complies with the ActiveModel API and includes validations, so it can be used in form helpers without a problem.
 
-## Usage
+## Installation
 
-    gem install basic_model
+```
+gem install basic_model
+```
+
+## Usage
     
-    # Gemfile
-    gem 'basic_model'
-    
-    # models/message.rb
-    class Message
-      include BasicModel
-      attr_accessor :name, :email, :content
-  
-      # can even include validations
-      validates_presence_of :name
-    end
-    
-    # Somewhere else
-    message = Message.new(:email => "foo", :content => "bar")
-    message.valid?
-    message.errors[:name] # => ["can't be blank"]
+```ruby
+require 'basic_model'
+
+class Message
+  include BasicModel
+  attr_accessor :name, :email, :content
+
+  # can even include validations
+  validates_presence_of :name
+end
+
+message = Message.new(:email => "foo", :content => "bar")
+message.valid?
+message.errors[:name] # => ["can't be blank"]
+```
 
 ## Copyright
 
