@@ -14,6 +14,14 @@ class Post
   end
 end
 
+class Comment
+  include BasicModel
+  include ActiveModel::MassAssignmentSecurity
+  attr_accessor :name, :comment, :spam
+  
+  attr_accessible :name, :comment
+end
+
 class BasicModelTest < ActiveSupport::TestCase
   include ActiveModel::Lint::Tests
   
@@ -31,5 +39,10 @@ class BasicModelTest < ActiveSupport::TestCase
     assert_nothing_raised do
       Post.new(:not_allowed => 'Oops')
     end
+  end
+  
+  def test_mass_security_assignment
+    @model = Comment.new(:name => 'Bob', :comment => 'Great post!', :spam => false)
+    assert_nil @model.spam
   end
 end
