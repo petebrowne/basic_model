@@ -21,9 +21,26 @@ class Message
   validates_presence_of :name
 end
 
-message = Message.new(:email => 'foo', :content => 'bar')
+message = Message.new(:email => 'bob@example.com', :content => 'Hey man!')
 message.valid?
 message.errors[:name] # => ["can't be blank"]
+```
+
+Using `ActiveModel::MassSecurityAssignment`:
+
+```ruby
+require 'active_model'
+require 'basic_model'
+
+class Comment
+  include BasicModel
+  include ActiveModel::MassAssignmentSecurity
+  attr_accessor :name, :comment, :spam
+  attr_accessible :name, :comment
+end
+
+comment = Comment.new(:name => 'Bob', :comment => 'Great Post!', :spam => false)
+comment.spam # => nil
 ```
 
 ## Copyright
