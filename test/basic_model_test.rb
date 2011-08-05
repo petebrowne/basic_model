@@ -45,4 +45,11 @@ class BasicModelTest < ActiveSupport::TestCase
     @model = Comment.new(:name => 'Bob', :comment => 'Great post!', :spam => false)
     assert_nil @model.spam
   end
+  
+  def test_initialize_with_yield
+    @model = Post.new do |post|
+      post.title = 'Title'
+    end
+    assert_equal 'Title', @model.title
+  end
 end

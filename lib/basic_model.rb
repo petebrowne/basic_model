@@ -27,6 +27,8 @@ module BasicModel
         send "#{name}=", value if respond_to? "#{name}="
       end
     end
+    
+    yield self if block_given?
   end
   
   # By default, BasicModels are not persisted in any way.
