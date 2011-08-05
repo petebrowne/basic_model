@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'basic_model'
-  s.version     = '0.2.1'
+  s.version     = '0.3.0'
   s.summary     = 'BasicModel is a tiny Module that complies with the ActiveModel API'
   s.description = 'BasicModel is intended to be used in a tableless model in Rails >= 3.0. It complies with the ActiveModel API and includes valdiations, so it can be used in form helpers without a problem.'
   
