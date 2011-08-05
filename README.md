@@ -26,7 +26,7 @@ message.valid?
 message.errors[:name] # => ["can't be blank"]
 ```
 
-Using `ActiveModel::MassSecurityAssignment`:
+Using `ActiveModel::MassAssignmentSecurity`:
 
 ```ruby
 require 'active_model'
