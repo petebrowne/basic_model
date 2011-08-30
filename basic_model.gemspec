@@ -1,11 +1,15 @@
+# -*- encoding: utf-8 -*-
+$:.push File.expand_path('../lib', __FILE__)
+require 'basic_model'
+
 Gem::Specification.new do |s|
   s.name        = 'basic_model'
-  s.version     = '0.3.0'
+  s.version     = BasicModel::VERSION
   s.summary     = 'BasicModel is a tiny Module that complies with the ActiveModel API'
   s.description = 'BasicModel is intended to be used in a tableless model in Rails >= 3.0. It complies with the ActiveModel API and includes valdiations, so it can be used in form helpers without a problem.'
   
-  s.authors           = 'Pete Browne'
-  s.email             = 'me@petebrowne.com'
+  s.authors           = ['Pete Browne']
+  s.email             = ['me@petebrowne.com']
   s.homepage          = 'http://github.com/petebrowne/basic_model'
   s.rubyforge_project = 'basic_model'
   
