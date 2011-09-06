@@ -1,9 +1,8 @@
+require "basic_model/version"
 require "active_model"
 require "active_support/concern"
 
 module BasicModel
-  VERSION = "0.3.1"
-  
   extend ActiveSupport::Concern
   include ActiveModel::Conversion
   include ActiveModel::Validations

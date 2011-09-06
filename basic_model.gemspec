@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 $:.push File.expand_path('../lib', __FILE__)
-require 'basic_model'
+require 'basic_model/version'
 
 Gem::Specification.new do |s|
   s.name        = 'basic_model'
