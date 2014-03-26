@@ -14,8 +14,8 @@ Gem::Specification.new do |s|
   
   s.rubyforge_project = 'basic_model'
   
-  s.add_dependency 'activemodel',   '>= 3.0'
-  s.add_dependency 'activesupport', '>= 3.0'
+  s.add_dependency 'activemodel',   '>= 3.0', '< 5'
+  s.add_dependency 'activesupport', '>= 3.0', '< 5'
   s.add_development_dependency 'rake'
 
   s.files         = `git ls-files`.split("\n")
