@@ -15,7 +15,7 @@ module BasicModel
     unless attributes.nil?
       # Sanitize the attributes if we're using ActiveModel::MassSecurityAssignment
       # Also account for the different APIs between 3.0 and 3.1
-      if respond_to? :sanitize_for_mass_assignment
+      if protected_methods.include? :sanitize_for_mass_assignment
         if method(:sanitize_for_mass_assignment).arity == 2
           attributes = sanitize_for_mass_assignment attributes, options[:as]
         else
