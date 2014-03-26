@@ -16,10 +16,12 @@ end
 
 class Comment
   include BasicModel
-  include ActiveModel::MassAssignmentSecurity if defined? ActiveModel::MassAssignmentSecurity
   attr_accessor :name, :comment, :spam
 
-  attr_accessible :name, :comment
+  if defined? ActiveModel::MassAssignmentSecurity
+    include ActiveModel::MassAssignmentSecurity
+    attr_accessible :name, :comment
+  end
 end
 
 class BasicModelTest < ActiveSupport::TestCase
