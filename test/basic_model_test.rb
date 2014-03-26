@@ -6,9 +6,9 @@ require 'test/unit'
 class Post
   include BasicModel
   attr_accessor :title, :body
-  
+
   private
-  
+
   def not_allowed=(value)
     raise 'Not Allowed!'
   end
@@ -18,23 +18,23 @@ class Comment
   include BasicModel
   include ActiveModel::MassAssignmentSecurity
   attr_accessor :name, :comment, :spam
-  
+
   attr_accessible :name, :comment
 end
 
 class BasicModelTest < ActiveSupport::TestCase
   include ActiveModel::Lint::Tests
-  
+
   def setup
     @model = Post.new
   end
-  
+
   def test_initialize_with_attributes
     @model = Post.new(:title => 'Title', :body => 'Body')
     assert_equal 'Title', @model.title
     assert_equal 'Body', @model.body
   end
-  
+
   def test_do_not_call_private_methods
     assert_nothing_raised do
       Post.new(:not_allowed => 'Oops')
@@ -45,7 +45,7 @@ class BasicModelTest < ActiveSupport::TestCase
     @model = Comment.new(:name => 'Bob', :comment => 'Great post!', :spam => false)
     assert_nil @model.spam
   end
-  
+
   def test_initialize_with_yield
     @model = Post.new do |post|
       post.title = 'Title'
