@@ -1,4 +1,4 @@
-source :rubygems
+source 'https://rubygems.org'
 
 gem 'basic_model', :path => File.expand_path('../..', __FILE__)
 
