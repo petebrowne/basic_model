@@ -16,7 +16,7 @@ end
 
 class Comment
   include BasicModel
-  include ActiveModel::MassAssignmentSecurity
+  include ActiveModel::MassAssignmentSecurity if defined? ActiveModel::MassAssignmentSecurity
   attr_accessor :name, :comment, :spam
 
   attr_accessible :name, :comment
@@ -40,10 +40,12 @@ class BasicModelTest < ActiveSupport::TestCase
       Post.new(:not_allowed => 'Oops')
     end
   end
-  
-  def test_mass_security_assignment
-    @model = Comment.new(:name => 'Bob', :comment => 'Great post!', :spam => false)
-    assert_nil @model.spam
+
+  if defined? ActiveModel::MassAssignmentSecurity
+    def test_mass_security_assignment
+      @model = Comment.new(:name => 'Bob', :comment => 'Great post!', :spam => false)
+      assert_nil @model.spam
+    end
   end
 
   def test_initialize_with_yield
