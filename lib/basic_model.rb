@@ -6,7 +6,7 @@ module BasicModel
   extend ActiveSupport::Concern
   include ActiveModel::Conversion
   include ActiveModel::Validations
-  
+
   # Creates and optionally sets the attributes of the model with keys
   # matching the attribute names. If ActiveModel::MassSecurityAssignment
   # is included, attributes will be sanitized with the role given in the :as option.
@@ -22,16 +22,16 @@ module BasicModel
           attributes = sanitize_for_mass_assignment attributes
         end
       end
-      
+
       # Now set the attributes, ignoring any private methods
       attributes.each do |name, value|
         send "#{name}=", value if respond_to? "#{name}="
       end
     end
-    
+
     yield self if block_given?
   end
-  
+
   # By default, BasicModels are not persisted in any way.
   def persisted?
     false
